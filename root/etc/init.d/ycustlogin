@@ -1,0 +1,20 @@
+#!/bin/sh /etc/rc.common
+START=99
+USE_PROCD=1
+PROG=/usr/bin/ycust_autologin.sh
+
+start_service() {
+	config_load ycustlogin
+	config_get_bool enable main enable 0
+	
+	if [ "$enable" = "1" ]; then
+		procd_open_instance
+		procd_set_param command $PROG
+		procd_set_param respawn
+		procd_close_instance
+	fi
+}
+
+service_triggers() {
+	procd_add_reload_trigger "ycustlogin"
+}

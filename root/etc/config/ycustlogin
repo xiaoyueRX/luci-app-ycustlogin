@@ -1,0 +1,5 @@
+config ycustlogin 'main'
+	option enable '0'
+	option username ''
+	option password ''
+	option check_interval '30'
