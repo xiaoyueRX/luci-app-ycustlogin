@@ -5,7 +5,7 @@ LUCI_DEPENDS:=+curl
 LUCI_PKGARCH:=all
 
 PKG_NAME:=luci-app-ycustlogin
-PKG_VERSION:=1.0.0
+PKG_VERSION:=1.1.0
 PKG_RELEASE:=1
 
 include ../../luci.mk
